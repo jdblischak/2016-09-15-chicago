@@ -1,18 +1,18 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-carpentry: "FIXME"    # what kind of Carpentry (must be either "dc" or "swc")
-venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+carpentry: "swc"    # what kind of Carpentry (must be either "dc" or "swc")
+venue: "University of Chicago"        # brief name of host site without address (e.g., "Euphoric State University")
+address: "Stuart 101, 5835 South Greenwood Avenue Chicago, IL 60637"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
+country: "us"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
+language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
+latlng: "41.788401, -87.599099"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use http://www.latlong.net/)
+humandate: "Sep 15-16, 2016"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "8:00 am - 4:30 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+startdate: 2016-09-15      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2016-09-16        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+instructor: ["John Blischak", "Emily Davenport"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: "FIXME"      # contact email address for host, lead instructor, or whoever else is handling questions
+contact: "jdblischak@uchicago.edu"      # contact email address for host, lead instructor, or whoever else is handling questions
 etherpad:             # optional: URL for the workshop Etherpad if there is one
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
@@ -46,13 +46,21 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template.  Use it to create your own website.
-Delete this line and email the link to your workshop page to admin@software-carpentry.org.
-If this is a self organized workshop, please be sure to include any other details
-Software Carpentry staff may need to know in your email.</h4>
+<h2 id ="registration">Registration</h2>
 
+<p>
+  Registration is required and is limited to those affiliated with the
+  Biological Sciences Division. We will use Eventbrite for
+  regristation (coming soon).
+</p>
+
+<!--
+Please register
+  at <a href="https://2015-09-15-chicago.eventbrite.com">2015-09-15-chicago.eventbrite.com</a>.
+-->
 
 <h2 id="general">General Information</h2>
+
 
 <!--
   INTRODUCTION
@@ -61,22 +69,29 @@ Software Carpentry staff may need to know in your email.</h4>
   the pitch.
 -->
 <p>
-  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission
-  is to help scientists and engineers get more research done in less
-  time and with less pain by teaching them basic lab skills for
-  scientific computing.  This hands-on workshop will cover basic
-  concepts and tools, including program design, version control, data
-  management, and task automation.  Participants will be encouraged to
-  help one another and to apply what they have learned to their own
-  research problems.
+  <a href="{{site.swc_site}}">Software Carpentry</a>'s mission is to help
+  scientists and engineers get more research done in less time and with less
+  pain by teaching them basic lab skills for scientific computing. This hands-on
+  workshop is aimed at intermediate programmers that know the basics of R and
+  want to learn more. It is ideal for past attendees of our novice Software
+  Carpentry workshops
+  (e.g. <a href="http://jdblischak.github.io/2013-09-19-chicago/">2013</a>, <a href="http://jdblischak.github.io/2014-09-18-chicago">2014</a>),
+  incoming graduate students that attended
+  the <a href="https://bsdgrad.uchicago.edu/page/mbl-quantitative-approaches-bootcamp">MBL
+  bootcamp</a>, and graduate students or postdocs that currently use R for
+  their research.
 </p>
-<p align="center">
-  <em>
-    For more information on what we teach and why,
-    please see our paper
-    "<a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Best Practices for Scientific Computing</a>".
-  </em>
+
+<p>
+  <u>Coffee and lunch will be provided both days.</u>
 </p>
+
+<p>
+  <u>This workshop will cover the same material
+  as <a href="https://jdblischak.github.io/2015-09-15-chicago/">last
+  year's workshop.</a></u>
+</p>
+
 
 <!--
   AUDIENCE
@@ -84,11 +99,14 @@ Software Carpentry staff may need to know in your email.</h4>
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
 -->
-<p id="who">
+<p>
   <strong>Who:</strong>
-  The course is aimed at graduate students and other researchers.
-  <strong>You don't need to have any previous knowledge of the tools that will
-    be presented at the workshop.</strong>
+  The course is limited to graduate students and other researchers in the Biological Sciences Division at the University of Chicago.
+</p>
+
+<p>
+  <strong>Prerequisites:</strong>
+  Attendees should be familiar with the basics of navigating a filesystem in a Unix-like shell and writing functions and loops in R.
 </p>
 
 <!--
@@ -100,7 +118,7 @@ Software Carpentry staff may need to know in your email.</h4>
   address.
 -->
 {% if page.latlng %}
-<p id="where">
+<p>
   <strong>Where:</strong>
   {{page.address}}.
   Get directions with
@@ -115,6 +133,11 @@ Software Carpentry staff may need to know in your email.</h4>
 
   Modify the block below if there are any special requirements.
 -->
+<!--
+  SPECIAL REQUIREMENTS
+
+  Modify the block below if there are any special requirements.
+-->
 <p id="requirements">
   <strong>Requirements:</strong> Participants must bring a laptop with a
   Mac, Linux, or Windows operating sytem (not a tablet, Chromebook, etc.) that they have administrative privileges
@@ -124,40 +147,42 @@ Software Carpentry staff may need to know in your email.</h4>
   <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
 </p>
 
-<!--
-  ACCESSIBILITY
-
-  Modify the block below if there are any barriers to accessibility or
-  special instructions.
--->
-<p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organisers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
 <p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  <a href="mailto:{{page.contact}}">get in touch</a> and we will
-  attempt to provide them.
+  <strong>Funding:</strong> This workshop was made possible through
+  the generous sponsorhip of
+  the <a href="http://gradprograms.bsd.uchicago.edu/our_office.html">Office
+  of Graduate and Postdoctoral Affairs</a>, the <a href =
+  "http://genes.uchicago.edu/">Department of Human Genetics</a>, and
+  the <a href = "http://bmb.uchospitals.edu/">Department of
+  Biochemistry and Molecular Biology</a>.
+</p>
+
+<p>
+  <strong>Faculty advisors:</strong>
+  Allan Drummond, Matthew Stephens, Mark Abney 
+</p>
+
+<p>
+  <strong>Administrators:</strong>
+  Lisa Anderson, Candice Lewis
 </p>
 
 <!--
   CONTACT EMAIL ADDRESS
 
-  Display the contact email address set in the configuration file.
+  Display the contact email address set in the header.  If an address
+  isn't set in the header, the Software Carpentry admin address is
+  used.
 -->
-<p id="contact">
+<p>
   <strong>Contact</strong>:
   Please mail
-  <a href="mailto:{{page.contact}}">{{page.contact}}</a> for more
-  information.
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
 </p>
 
 <hr/>
@@ -179,27 +204,45 @@ Software Carpentry staff may need to know in your email.</h4>
 
 <div class="row">
   <div class="col-md-6">
-    <h3>Day 1</h3>
+    <h3>Sep 15</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
-      <tr> <td>10:30</td> <td>Coffee</td> </tr>
-      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
-      <tr> <td>14:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
+      <tr><td>08:00 am - 08:30 am - Installation help</td></tr>
+      <tr><td>08:30 am - 10:00 am - Review of Unix shell and R</td></tr>
+      <tr><td>10:00 am - 10:30 am - Coffee break</td></tr>
+      <tr><td>10:30 am - 12:00 pm - Writing reproducible reports</td></tr>
+      <tr><td>12:00 pm - 01:00 pm - Lunch</td></tr>
+      <tr><td>01:00 pm - 02:30 pm - Analyzing data with dplyr</td></tr>
+      <tr><td>02:30 pm - 03:00 pm - Coffee break</td></tr>
+      <tr><td>03:00 pm - 04:30 pm - Visualizing data with ggplot2</td></tr>
     </table>
   </div>
   <div class="col-md-6">
-    <h3>Day 2</h3>
+    <h3>Sep 16</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
-      <tr> <td>10:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
-      <tr> <td>14:30</td>  <td>Coffee</td> </tr>
-      <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
+      <tr><td>08:00 am - 08:30 am - Installation help</td></tr>
+      <tr><td>08:30 am - 10:00 am - Version control with Git</td></tr>
+      <tr><td>10:00 am - 10:30 am - Coffee break</td></tr>
+      <tr><td>10:30 am - 12:00 pm - Version control with Git</td></tr>
+      <tr><td>12:00 pm - 01:00 pm - Lunch</td></tr>
+      <tr><td>01:00 pm - 02:30 pm - Debugging</td></tr>
+      <tr><td>02:30 pm - 03:00 pm - Coffee break</td></tr>
+      <tr><td>03:00 pm - 04:30 pm - Defensive programming</td></tr>
     </table>
   </div>
+</div>
+
+<div id="links">
+  <h3>Useful Links</h3>
+  <p>
+    The following links will be useful during the workshop:
+    <ul>
+      <li>We have a <a href="https://www.dropbox.com/sh/5c9vez8lhu1xumk/AADu4BQdb4447on2FQ-aJ_OXa?dl=0">dropbox</a> folder that will contain the scripts we are creating and text file of the history of the git lessons.</li>
+      <li>Here are two datasets <a href="https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-raw.txt.gz">(raw)</a> and <a href="https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-norm.txt.gz">(normalized)</a> that we will use in the R section. Right click to save as and save in the altmetrics/data folder.</li>
+      <li>Here is a link to the <a href="https://jdblischak.github.io/r-intermediate-altmetrics/">R lesson material</a>.</li>
+      <li>Here is a link to the <a href="http://erdavenport.github.io/git-lessons/index.html">git lesson material</a>.</li>
+    </ul>
+  </p>
+
 </div>
 
 <!--
@@ -245,90 +288,45 @@ Software Carpentry staff may need to know in your email.</h4>
 -->
 <h2 id="syllabus">Syllabus</h2>
 
-<div class="row">
-  <div class="col-md-6">
-    <h3 id="syllabus-shell">The Unix Shell</h3>
-    <ul>
-      <li>Files and directories</li>
-      <li>History and tab completion</li>
-      <li>Pipes and redirection</li>
-      <li>Looping over files</li>
-      <li>Creating and running shell scripts</li>
-      <li>Finding things</li>
-      <li><a href="{{site.swc_github_io}}/shell-novice/reference/">Reference...</a></li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <h3 id="syllabus-python">Programming in Python</h3>
-    <ul>
-      <li>Using libraries</li>
-      <li>Working with arrays</li>
-      <li>Reading and plotting data</li>
-      <li>Creating and using functions</li>
-      <li>Loops and conditionals</li>
-      <li>Defensive programming</li>
-      <li>Using Python from the command line</li>
-      <li><a href="{{site.swc_github_io}}/python-novice-inflammation/reference/">Reference...</a></li>
-    </ul>
-  </div>
-  <!--
-  <div class="col-md-6">
-    <h3 id="syllabus-r">Programming in R</h3>
-    <ul>
-      <li>Working with vectors and data frames</li>
-      <li>Reading and plotting data</li>
-      <li>Creating and using functions</li>
-      <li>Loops and conditionals</li>
-      <li>Using R from the command line</li>
-      <li><a href="{{site.swc_github_io}}/r-novice-inflammation/reference/">Reference...</a></li>
-    </ul>
-  </div>
-  -->
-  <!--
-  <div class="col-md-6">
-    <h3 id="syllabus-matlab">Programming in MATLAB</h3>
-    <ul>
-      <li>Working with arrays</li>
-      <li>Reading and plotting data</li>
-      <li>Creating and using functions</li>
-      <li>Loops and conditionals</li>
-      <li>Defensive programming</li>
-      <li><a href="{{site.swc_github_io}}/matlab-novice-inflammation/reference/">Reference...</a></li>
-     </ul>
-   </div>
-   -->
-</div>
+<h3>Review of the Unix shell and R programming</h3>
+<p>
+  We will start with a refresher on the Unix shell and R
+  programming. Specifically, we will quickly review how to manage files with the
+  Unix shell and write loops and functions in R. This will ensure that everyone
+  is reminded of the relevant syntax needed for the rest of the workshop.
+</p>
 
-<div class="row">
-  <div class="col-md-6">
-    <h3 id="syllabus-git">Version Control with Git</h3>
-    <ul>
-      <li>Creating a repository</li>
-      <li>Recording changes to files: <code>add</code>, <code>commit</code>, ...</li>
-      <li>Viewing changes: <code>status</code>, <code>diff</code>, ...</li>
-      <li>Ignoring files</li>
-      <li>Working on the web: <code>clone</code>, <code>pull</code>, <code>push</code>, ...</li>
-      <li>Resolving conflicts</li>
-      <li>Open licenses</li>
-      <li>Where to host work, and why</li>
-      <li><a href="{{site.swc_github_io}}/git-novice/reference/">Reference...</a></li>
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <h3 id="syllabus-sql">Managing Data with SQL</h3>
-    <ul>
-      <li>Reading and sorting data</li>
-      <li>Filtering with <code>where</code></li>
-      <li>Calculating new values on the fly</li>
-      <li>Handling missing values</li>
-      <li>Combining values using aggregation</li>
-      <li>Combining information from multiple tables using <code>join</code></li>
-      <li>Creating, modifying, and deleting data</li>
-      <li>Programming with databases</li>
-      <li><a href="{{site.swc_github_io}}/sql-novice-survey/reference/">Reference...</a></li>
-    </ul>
-  </div>
-</div>
+<h3>Writing reproducible reports</h3>
+<p>
+  We will introduce the concept of literate programming, in which code, plots,
+  and text are combined into one document. This makes it easier to organize a
+  research project and share the results. Specifically, we will use
+  knitr/rmarkdown/pandoc to convert R code into html, pdf, and Word documents.
+</p>
+
+<h3>Exploring and visualizing data</h3>
+<p>
+  We will teach how to subset, summarize, and clean a data set using the R
+  package dplyr. Furthermore, we will demonstrate how to visualize multivariate
+  data using the popular graphics package ggplot2.
+</p>
+
+<h3>Tracking code development</h3>
+<p>
+  We will cover how to track code development using the version control software
+  Git. This facilitates both experimenting with new ideas and the ability to
+  reproduce past results with a specific version of the code. Furthermore, we
+  will teach how to share their code online and collaborate using the
+  website GitHub.
+</p>
+
+<h3>Debugging, defensive programming, and automated testing</h3>
+<p>
+  We will cover multiple aspects of ensuring that code is working
+  correctly. This will include how to debug functions, programming defensively
+  by including assertion statements to check code behavior, and writing tests
+  that can be run automatically.
+<p>
 
 <hr/>
 
@@ -527,14 +525,6 @@ Software Carpentry staff may need to know in your email.</h4>
         and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
       </p>
-      <p>
-        Others editors that you can use are
-        <a href="http://notepad-plus-plus.org/">Notepad++</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
-        <strong>Be aware that you must
-          add its installation directory to your system path.</strong>
-        Please ask your instructor to help you do this.
-      </p>
     </div>
     <div class="col-md-4">
       <h4 id="editor-macosx">Mac OS X</h4>
@@ -544,11 +534,6 @@ Software Carpentry staff may need to know in your email.</h4>
         for an example on how to open nano.
         It should be pre-installed.
       </p>
-      <p>
-        Others editors that you can use are
-        <a href="http://www.barebones.com/products/textwrangler/">Text Wrangler</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
-      </p>
     </div>
     <div class="col-md-4">
       <h4 id="editor-linux">Linux</h4>
@@ -556,103 +541,101 @@ Software Carpentry staff may need to know in your email.</h4>
         nano is a basic editor and the default that instructors use in the workshop.
         It should be pre-installed.
       </p>
-      <p>
-        Others editors that you can use are
-        <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>,
-        <a href="http://kate-editor.org/">Kate</a> or
-        <a href="http://www.sublimetext.com/">Sublime Text</a>.
-      </p>
     </div>
   </div>
 </div> <!-- End of 'editor' section. -->
 
-<div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
-           the workshop will teach Python using something other than
-           the IPython notebook.
-           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
-  <h3>Python</h3>
 
-  <p>
-    <a href="http://python.org">Python</a> is a popular language for
-    scientific computing, and great for general-purpose programming as
-    well.  Installing all of its scientific packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.continuum.io/anaconda">Anaconda</a>,
-    an all-in-one installer.
-  </p>
+<!-- Skip Python section. May offer optional install session during a
+coffee break. To uncomment, use Emacs M-x uncomment-region -->
 
-    <p>
-      Regardless of how you choose to install it,
-      <strong>please make sure you install Python version 3.x</strong>
-      (e.g., 3.4 is fine).
-    </p>
+<!-- <div id="python"> <\!-- Start of 'Python' section. Remove the third paragraph if -->
+<!--            the workshop will teach Python using something other than -->
+<!--            the IPython notebook. -->
+<!--            Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -\-> -->
+<!--   <h3>Python</h3> -->
 
-    <p>
-      We will teach Python using the IPython notebook, a programming environment
-      that runs in a web browser. For this to work you will need a reasonably
-      up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all
-      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
-      (some older browsers, including Internet Explorer version 9
-      and below, are not).
-    </p>
+<!--   <p> -->
+<!--     <a href="http://python.org">Python</a> is a popular language for -->
+<!--     scientific computing, and great for general-purpose programming as -->
+<!--     well.  Installing all of its scientific packages individually can be -->
+<!--     a bit difficult, so we recommend -->
+<!--     <a href="https://www.continuum.io/anaconda">Anaconda</a>, -->
+<!--     an all-in-one installer. -->
+<!--   </p> -->
 
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="python-windows">Windows</h4>
-      <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Windows.</li>
-        <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-macosx">Mac OS X</h4>
-      <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for OS X.</li>
-        <li>Install Python 3 using all of the defaults for installation.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-linux">Linux</h4>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Linux.</li>
-        <li>Install Python 3 using all of the defaults for installation.
-        (Installation requires using the shell. If you aren't
-        comfortable doing the installation yourself
-        stop here and request help at the workshop.)</li>
-        <li>
-          Open a terminal window.
-        </li>
-        <li>
-          Type <pre>bash Anaconda3-</pre> and then press
-          tab. The name of the file you just downloaded should
-          appear.
-        </li>
-        <li>
-          Press enter. You will follow the text-only prompts.  When
-          there is a colon at the bottom of the screen press the down
-          arrow to move down through the text. Type <code>yes</code> and
-          press enter to approve the license. Press enter to approve the
-          default location for the files. Type <code>yes</code> and
-          press enter to prepend Anaconda to your <code>PATH</code>
-          (this makes the Anaconda distribution the default Python).
-        </li>
-      </ol>
-    </div>
-  </div>
-<!--
-  <p>
-  Once you are done installing the software listed above,
-  please go to <a href="setup/index.html">this page</a>,
-  which has instructions on how to test that everything was installed correctly.
-  </p>
--->
-</div> <!-- End of 'Python' section. -->
+<!--     <p> -->
+<!--       Regardless of how you choose to install it, -->
+<!--       <strong>please make sure you install Python version 3.x</strong> -->
+<!--       (e.g., 3.4 is fine). -->
+<!--     </p> -->
+
+<!--     <p> -->
+<!--       We will teach Python using the IPython notebook, a programming environment -->
+<!--       that runs in a web browser. For this to work you will need a reasonably -->
+<!--       up-to-date browser. The current versions of the Chrome, Safari and -->
+<!--       Firefox browsers are all -->
+<!--       <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a> -->
+<!--       (some older browsers, including Internet Explorer version 9 -->
+<!--       and below, are not). -->
+<!--     </p> -->
+
+<!--   <div class="row"> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-windows">Windows</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA">Video Tutorial</a> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for Windows.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-macosx">Mac OS X</h4> -->
+<!--       <a href="https://www.youtube.com/watch?v=TcSAln46u9U">Video Tutorial</a> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for OS X.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation.</li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--     <div class="col-md-4"> -->
+<!--       <h4 id="python-linux">Linux</h4> -->
+<!--       <ol> -->
+<!--         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li> -->
+<!--         <li>Download the Python 3 installer for Linux.</li> -->
+<!--         <li>Install Python 3 using all of the defaults for installation. -->
+<!--         (Installation requires using the shell. If you aren't -->
+<!--         comfortable doing the installation yourself -->
+<!--         stop here and request help at the workshop.)</li> -->
+<!--         <li> -->
+<!--           Open a terminal window. -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           Type <pre>bash Anaconda3-</pre> and then press -->
+<!--           tab. The name of the file you just downloaded should -->
+<!--           appear. -->
+<!--         </li> -->
+<!--         <li> -->
+<!--           Press enter. You will follow the text-only prompts.  When -->
+<!--           there is a colon at the bottom of the screen press the down -->
+<!--           arrow to move down through the text. Type <code>yes</code> and -->
+<!--           press enter to approve the license. Press enter to approve the -->
+<!--           default location for the files. Type <code>yes</code> and -->
+<!--           press enter to prepend Anaconda to your <code>PATH</code> -->
+<!--           (this makes the Anaconda distribution the default Python). -->
+<!--         </li> -->
+<!--       </ol> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- <\!-- -->
+<!--   <p> -->
+<!--   Once you are done installing the software listed above, -->
+<!--   please go to <a href="setup/index.html">this page</a>, -->
+<!--   which has instructions on how to test that everything was installed correctly. -->
+<!--   </p> -->
+<!-- -\-> -->
+<!-- </div> <\!-- End of 'Python' section. -\-> -->
 
 <div id="r"> <!-- Start of 'R' section. -->
   <h3>R</h3>
@@ -701,42 +684,19 @@ Software Carpentry staff may need to know in your email.</h4>
   </div>
 </div> <!-- End of 'R' section. -->
 
-<div id="sql"> <!-- Start of 'SQLite' section. -->
-  <h3>SQLite</h3>
-
+<div id="r-packages">
+  <h3>R packages</h3>
   <p>
-    SQL is a specialized programming language used with databases.  We
-    use a simple database manager called
-    <a href="http://www.sqlite.org/">SQLite</a> in our lessons.
+    Please install the following R packages using <code>install.packages</code>:
+    <ul>
+      <li><a href="https://cran.r-project.org/web/packages/dplyr/index.html">dplyr</a></li>
+      <li><a href="https://cran.r-project.org/web/packages/ggplot2/index.html">ggplot2</a></li>
+      <li><a href="https://cran.r-project.org/web/packages/testit/index.html">testit</a></li>
+      <li><a href="https://cran.r-project.org/web/packages/rmarkdown/index.html">rmarkdown</a></li>
+    </ul>
   </p>
 
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="sql-windows">Windows</h4>
-      <p>
-        The <a href="{{site.swc_installer}}">Software Carpentry Windows Installer</a>
-        installs SQLite for Windows.
-        If you used the installer to configure nano, you don't need to run it again.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-macosx">Mac OS X</h4>
-      <p>
-        SQLite comes pre-installed on Mac OS X.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-linux">Linux</h4>
-      <p>
-        SQLite comes pre-installed on Linux.
-      </p>
-    </div>
-  </div>
-
-  <p><strong>If you installed Anaconda, it also has a copy of SQLite
-    <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
-    Instructors will provide a workaround for it if needed.</strong></p>
-</div> <!-- End of 'SQLite' section. -->
+</div>
 
 <!--
   Uncomment this section if you are using our virtual machine.
