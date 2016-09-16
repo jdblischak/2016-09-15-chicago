@@ -1,0 +1,185 @@
+  500  echo "Good Morning Chicago"
+  501  git
+  502  git
+  503  git config --global user.name "Emily Davenport"
+  504  git config --global user.email "erdavenport@uwalumni.com"
+  505  git config --global color.ui "auto"
+  506  git config --global core.editor "nano"
+  507  git config --list
+  508  cd
+  509  pwd
+  510  mkdir planets
+  511  cd planets/
+  512  pwd
+  513  git init
+  514  ls
+  515  ls -a
+  516  git status
+  517  nano mars.txt
+  518  cat mars.txt 
+  519  git status
+  520  git add mars.txt 
+  521  git status
+  522  git commit -m "Start notes on Mars as a base"
+  523  git status
+  524  git log
+  525  nano mars.txt 
+  526  git status
+  527  git diff
+  528  git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+  529  git add mars.txt 
+  530  git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+  531  nano mars.txt 
+  532  git diff
+  533  git add mars.txt 
+  534  git diff
+  535  git diff --staged
+  536  git commit -m "Discuss concerns about Mars' climate for Mummy"
+  537  git status
+  538  git log
+  539  cd
+  540  mkdir bio
+  541  cd bio/
+  542  git init
+  543  nano me.txt
+  544  git add me.txt 
+  545  git commit -m "Started my biography"
+  546  nano me.txt 
+  547  git diff
+  548  cd
+  549  cd planets/
+  550  pwd
+  551  git diff HEAD~1 mars.txt 
+  552  git diff HEAD~2 mars.txt 
+  553  git log
+  554  git diff a8d25c9312e591011294a43786dd3e1d51c16fff 
+  555  git diff a8d25c9 mars.txt 
+  556  nano mars.txt 
+  557  cat mars.txt 
+  558  git checkout HEAD mars.txt 
+  559  cat mars.txt 
+  560  git log
+  561  mkdir results
+  562  touch a.dat b.dat c.dat results/a.out results/b.out
+  563  ls
+  564  git status
+  565  nano .gitignore
+  566  git status
+  567  git add .gitignore 
+  568  git commit -m "added ignore file"
+  569  git status
+  570  git add a.dat
+  571  git remote add origin https://github.com/erdavenport/planets.git
+  572  git push -u origin master
+  573  git pull origin master
+  574  cd
+  575  cd bio
+  576  git status
+  577  git add me.txt 
+  578  git commit -m "updated bio to express love of the Windy City"
+  579  git remote add origin https://github.com/erdavenport/bio.git
+  580  git push -u origin master
+  581  cd ../planets/
+  582  pwd
+  583  cd /tmp
+  584  git clone https://github.com/erdavenport/planets.git
+  585  ls
+  586  cd planets/
+  587  pwd
+  588  nano pluto.txt
+  589  git add pluto.txt 
+  590  git commit -m "Some notes about Pluto"
+  591  git push origin master
+  592  pwd
+  593  cd 
+  594  cd planets/
+  595  pwd
+  596  git pull origin master
+  597  ls
+  598  pwd
+  599  nano mars.txt 
+  600  git add mars.txt 
+  601  git commit -m "Adding a line in our home copy"
+  602  git push origin master
+  603  cd /tmp/planets/
+  604  pwd
+  605  ls
+  606  nano mars.txt 
+  607  git add mars.txt 
+  608  git commit -m "Adding a line in the temporary copy"
+  609  git push origin master
+  610  git pull origin master
+  611  nano mars.txt 
+  612  git add mars.txt 
+  613  git status
+  614  git commit -m "Merging changes from GitHub"
+  615  git status
+  616  git push origin master
+  617  cd
+  618  cd Desktop/
+  619  cd
+  620  cd bio
+  621  ls
+  622  nano me.txt 
+  623  git add me.txt 
+  624  git commit me.txt 
+  625  git status
+  626  git push
+  627  clear
+  628  cd
+  629  cd planets/
+  630  pwd
+  631  ls
+  632  git status
+  633  git branch experimental
+  634  git branch
+  635  git checkout experimental
+  636  nano pluto.txt 
+  637  git add pluto.txt 
+  638  git commit -m "Breaking updates about Pluto"
+  639  git status
+  640  git push origin experimental
+  641  git status
+  642  git checkout master
+  643  git status
+  644  git branch
+  645  git merge experimental
+  646  git status
+  647  git push origin master
+  648  git pull origin master
+  649  git push origin master
+  650  git branch -d experimental
+  651  git branch
+  652  git push origin experimental:experimental
+  653  git push origin experimental:experimental
+  654  git push origin :experimental
+  655  cd
+  656  cd bio
+  657  ls
+  658  git branch grad_school
+  659  git checkout grad_school
+  660  nano thesis
+  661  git add thesis 
+  662  git commit -m "Added note about my science"
+  663  git checkout master
+  664  git merge grad_school
+  665  ls
+  666  cd
+  667  git clone https://github.com/erd-test/forkme.git
+  668  ls
+  669  cd forkme/
+  670  ls
+  671  git remote -v
+  672  git remote add upstream http://github.com/erdavenport/forkme.git
+  673  git remote -v
+  674  git pull upstream master
+  675  touch wisconsin_ERD.txt
+  676  git add wisconsin_ERD.txt 
+  677  git commit -m "Added ERD information"
+  678  git push origin master
+  679  git push origin master
+  680  git pull upstream master
+  681  ls
+  682  nano .bashrc
+  683  cd
+  684  nano .bashrc
