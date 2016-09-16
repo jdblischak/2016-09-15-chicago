@@ -1,0 +1,65 @@
+
+For Windows users getting a EOF error, try the following:
+
+```{r}
+counts_raw <- read.delim("data/counts-raw.txt.gz", quote = "",
+                         check.names = FALSE)
+colnames(counts_raw) <- gsub("\"", "", colnames(counts_raw))
+colnames(counts_raw)
+```
+
+For everybody else:
+
+```{r}
+counts_raw <- read.delim("data/counts-raw.txt.gz")
+```
+
+```{r}
+is.na(counts_raw$authorsCount[1:10])
+counts_raw$authorsCount[1:10] > 7
+counts_raw$authorsCount[counts_raw$backtweetsCount > 1]
+```
+
+```{r}
+dim(counts_raw[counts_raw$journal == "pone", ])
+```
+
+& -> and
+| -> or
+%in% -> in
+
+
+```{r}
+dim(counts_raw[counts_raw$journal == "pone" |
+            counts_raw$journal == "pgen", ])
+dim(counts_raw[counts_raw$journal %in% 
+                 c("pone", "pgen", "pmed"),])
+dim(counts_raw[!(counts_raw$journal %in% 
+                 c("pone", "pgen", "pmed")),])
+
+```
+
+== -> equals
+!= -> not equal
+
+the function grepl
+
+```{r}
+head(counts_raw$plosSubjectTags)
+dim(counts_raw[grepl("Immunology", counts_raw$plosSubjectTags), ])
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

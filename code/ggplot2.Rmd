@@ -1,0 +1,195 @@
+---
+title: "ggplot2"
+output: html_document
+---
+
+You will need the ggplot2 package installed.
+
+```{r eval=FALSE}
+install.packages("ggplot2")
+```
+
+Load the package:
+
+```{r}
+library("ggplot2")
+```
+
+Load the data:
+
+```{r}
+counts_raw <- read.delim("data/counts-raw.txt.gz")
+```
+
+Select only the research articles:
+
+```{r}
+library("dplyr")
+research <- counts_raw %>%
+  filter(articleType == "Research Article")
+```
+
+Let's make our first plot:
+
+```{r}
+p <- ggplot(data = research,
+            mapping = aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011))
+p + geom_point()
+```
+
+```{r}
+p <- ggplot(data = research,
+            mapping = aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point()
+p
+```
+
+```{r}
+p <- ggplot(research,
+            aes(x = pdfDownloadsCount,
+                y = wosCountThru2011)) +
+  geom_point(aes(color = journal)) +
+  geom_smooth()
+p
+```
+
+```{r}
+p <- ggplot(research,
+            aes(x = pdfDownloadsCount,
+                y = wosCountThru2011,
+                color = journal)) +
+  geom_point(shape = 1, alpha = 0.25) +
+  geom_smooth()
+p
+```
+
+## Challenge:
+
+Create a scatter plot with daysSincePublished mapped to the x-axis and wosCountThru2011 mapped to the y-axis. Include a loess fit of the data. Set the transparency level (alpha) of the points to 0.5 and color the points according to the journal where the article was published. Make the loess curve red.
+
+```{r}
+p <- ggplot(research, aes(x = daysSincePublished,
+                          y = wosCountThru2011,
+                          color = journal)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth()
+p
+```
+
+Changing the scales of the plot
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point(aes(color = journal)) +
+  geom_smooth() +
+  scale_x_sqrt() +
+  scale_y_sqrt() +
+  # scale_color_grey() +
+  scale_color_manual(values = c("red", "blue",
+                                "green", "black",
+                                "grey", "yellow",
+                                "purple"))
+p
+```
+
+Better colors:
+
+```{r}
+library("RColorBrewer")
+display.brewer.all(type = "qual")
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point(aes(color = journal), alpha = 0.5) +
+  geom_smooth() +
+  scale_x_sqrt() +
+  scale_y_sqrt() +
+  scale_color_brewer(palette = "Dark2")
+p
+```
+
+Split the plot by journal:
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point(aes(color = journal), alpha = 0.5) +
+  geom_smooth() +
+  scale_x_sqrt() +
+  scale_y_sqrt() +
+  scale_color_brewer(palette = "Dark2") +
+  # facet_wrap(~journal)
+  facet_grid(year ~ journal)
+p
+```
+
+What does citation relationship look like for immunology papers?
+
+```{r}
+research <- research %>%
+  mutate(immuno = grepl("Immunology", plosSubjectTags))
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point() +
+  facet_wrap(~immuno)
+p
+```
+
+Add another variable to research called evolution, which is a logical vector indicating if the article has the PLOS subject tag “Evolutionary Biology”. Use facet_grid to create subplots based on the variables evolution and immuno.
+
+```{r}
+research <- research %>%
+  mutate(evolution = grepl("Evolutionary Biology",
+                           plosSubjectTags))
+
+```
+
+```{r}
+research <- research %>%
+  mutate(immuno = grepl("Immunology", plosSubjectTags))
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point() +
+  facet_grid(evolution~immuno, labeller = "label_both")
+p
+```
+
+Combine dplyr and ggplot2:
+
+```{r}
+tweets_per_journal <- research %>%
+  group_by(journal) %>%
+  summarize(num = n(),
+            mean = mean(backtweetsCount),
+            sem = sd(backtweetsCount) / sqrt(num))
+tweets_per_journal
+```
+
+Make barplot with ggplot2:
+
+```{r}
+tweets_bar <- ggplot(tweets_per_journal,
+                     aes(x = journal,
+                         y = mean)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = mean - sem,
+                    ymax = mean + sem), width = 0.1)
+tweets_bar
+```
+
+Save ggplot2 plots:
+
+```{r}
+?ggsave
+```
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+---
+title: "dplyr"
+output: html_document
+---
+
+Load the dplyr package.
+
+```{r}
+library("dplyr")
+# install.packages("dplyr")
+```
+
+Load our altmetrics data.
+
+```{r}
+counts_raw <- read.delim("data/counts-raw.txt.gz")
+```
+
+Only investigate articles that are primary reserarch articles.
+
+```{r}
+research <- filter(counts_raw, articleType == "Research Article")
+dim(research)
+```
+
+What about hte year 2006?
+
+```{r}
+research_2006 <- filter(research, year == 2006)
+dim(research_2006)
+```
+
+Articles in 2006 that have a facebook commment or a tweet.
+
+```{r}
+research_2006_fb_tweet <- filter(research, year == 2006,
+                                 backtweetsCount > 0 |
+                                 facebookCommentCount > 0)
+dim(research_2006_fb_tweet)
+```
+
+How to select columns?
+
+Obtain article information:
+
+```{r}
+article_info <- select(counts_raw, doi, pubDate, journal,
+                       title, articleType, authorsCount)
+colnames(article_info)
+article_info <- select(counts_raw, doi:authorsCount)
+colnames(article_info)
+```
+
+Obtain metrics:
+
+```{r}
+metrics <- select(counts_raw, contains("Count"),
+                  -authorsCount, -contains("facebook"))
+colnames(metrics)
+dim(metrics)
+```
+
+In the terminal, the pipe command is |
+In dplyr, the pipe commmad is %>%
+
+Obtain articles from 2006 but only the facebook data.
+
+```{r}
+facebook_2006 <- research %>% filter(year == 2006) %>%
+  select(contains("facebook"))
+dim(facebook_2006)
+colnames(facebook_2006)
+```
+
+Confirming results as you build a dplyr chain of commands:
+
+```{r}
+research %>% filter(year == 2006) %>%
+  select(contains("facebook")) %>% head
+```
+
+How to sort the data frame? Use the function arrange.
+
+```{r}
+research %>% arrange(desc(authorsCount)) %>%
+  select(authorsCount) %>% head
+# No more NA's after filtering for reserach articles
+anyNA(research$authorsCount)
+```
+
+```{r}
+research[1:10, 1:5]
+research %>% slice(1:10) %>% select(1:5)
+```
+
+Challenges:
+
+Using a chain of pipes, output the titles of the three research articles with the largest 2011 citation count (wosCountThru2011).
+
+```{r}
+research %>% arrange(desc(wosCountThru2011)) %>%
+  slice(1:3) %>% select(title)
+```
+
+Using a chain of pipes, output the author count (authorsCount), title, journal, and subject tags (plosSubjectTags) of the three research articles with the largest number of authors.
+
+```{r}
+research %>% arrange(desc(authorsCount)) %>%
+  slice(1:3) %>%
+  select(authorsCount, title, journal, plosSubjectTags)
+```
+
+How to create new columns? Use the funciton mutate.
+
+```{r}
+research <- research %>%
+  mutate(weeksSincePublished = daysSincePublished / 7,
+         yearsSincePublished = weeksSincePublished / 52)
+```
+
+Summarize the data with summarize.
+
+```{r}
+research %>% summarize(plos_mean = mean(plosCommentCount),
+                       plos_sd = sd(plosCommentCount),
+                       num = n(),
+                       plos_sem = plos_sd / sqrt(num))
+```
+
+
+```{r}
+research %>% 
+  group_by(journal, year) %>%
+  summarize(plos_mean = mean(plosCommentCount),
+            plos_sd = sd(plosCommentCount),
+            num = n(),
+            plos_sem = plos_sd / sqrt(num))
+```
+
+
+
+
+
+
+
+
+
+
+
